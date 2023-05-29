@@ -1,52 +1,68 @@
-import React from "react";
 import {
-  Flex,
-  Image,
-  useDisclosure,
   Box,
+  Flex,
+  HStack,
+  Image,
+  Button,
   Menu,
   MenuButton,
-  Avatar,
   MenuList,
   MenuItem,
-  Button,
   MenuDivider,
   MenuGroup,
+  Text,
 } from "@chakra-ui/react";
-import { CgProfile } from "@react-icons/all-files/fa/CgProfile";
 import { ChevronDownIcon } from "@chakra-ui/icons";
-
+import { CgProfile } from "react-icons/cg";
 import Logo from "../images/Tutedude_Logo.png";
 
-const Navbar = () => {
+export default function Navbar({ add }) {
   return (
-    <>
-      <Box border={"1px solid"} h={"73.03px"}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <Box border={"1px solid"}>
-            {" "}
-            <Image
-              src={Logo}
-              alt={"Tutedude Logo"}
-              w="180px"
-              h={"63px"}
-              pos={"relative"}
-              top={"6px"}
-              left={"74px"}
-            />
-          </Box>
-          <Flex>
+    <Box px={2}>
+      <Box px={[0, 5, 10, 10]} mx={2}>
+        <Flex
+          width={"100%"}
+          h={["73.03px"]}
+          alignItems={"center"}
+          justifyContent={"space-between"}>
+          <HStack spacing={8} alignItems={"center"}>
+            <Box w={"160px"}>
+              <Image src={Logo} width={"100%"} />
+            </Box>
+          </HStack>
+          <Flex alignItems={"center"} gap={[0, 0, 10, 10]}>
+            {/* <Text
+              // visibility={["hidden", "hidden", "visible", "visible"]}
+              color="#80008040"
+              fontWeight="500"
+              lineHeight="22.23px"
+              cursor={"pointer"}>
+              My Assignment
+            </Text>
+            <Text
+              // visibility={["hidden", "hidden", "visible", "visible"]}
+              color="#80008040"
+              fontWeight="500"
+              lineHeight="22.23px"
+              cursor={"pointer"}>
+              Chat with Mentor
+            </Text> */}
             <Menu>
               <MenuButton
+                bg={["#800080", "#800080", "transparent", "transparent"]}
                 leftIcon={<CgProfile />}
                 as={Button}
-                colorScheme="pink"
+                color={["#fff", "#fff", "#800080", "#800080"]}
+                fontWeight="500"
+                lineHeight="22.23px"
+                fontSize={["16px", "16px", "18px", "18px"]}
+                colorScheme={"transparent"}
                 rightIcon={<ChevronDownIcon />}>
-                Profile
+                ProfileName
               </MenuButton>
 
               <MenuList>
-                <MenuGroup title="Profile">
+                <MenuGroup>
                   <MenuItem>My Account</MenuItem>
                   <MenuItem>Logout</MenuItem>
                 </MenuGroup>
@@ -56,8 +72,20 @@ const Navbar = () => {
           </Flex>
         </Flex>
       </Box>
-    </>
-  );
-};
 
-export default Navbar;
+      <Box w={"100%"} h={"76px"} position={"relative"}>
+        <Text
+          color={"#000"}
+          position={"absolute"}
+          top={"30px"}
+          bottom={"25px"}
+          left={"10%"}
+          fontWeight={400}
+          fontSize={"14px"}
+          lineHeight={"21px"}>
+          UI/UX &gt; Refer & Earn {add}
+        </Text>
+      </Box>
+    </Box>
+  );
+}
