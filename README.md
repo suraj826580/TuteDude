@@ -3,34 +3,13 @@
 
 
 
-## Tech Stack
-
-**Client:** React, Chakra
+## Tech Stack - React, Chakra
 
 
 ## Screenshots
 
 ![App Screenshot](https://bestfile.io/secure/file/vPbe3PVnLGlX6)
 ![App Screenshot](https://bestfile.io/secure/file/1k0emb1nWGVb4)
-
-
-## Optimizations
-
-What optimizations did you make in your code? E.g. refactors, performance improvements, accessibility
-
-
-## Related
-
-Here are some related projects
-
-[Awesome README](https://github.com/matiassingers/awesome-readme)
-
-
-## Roadmap
-
-- Additional browser support
-
-- Add more integrations
 
 
 ## Deployment
